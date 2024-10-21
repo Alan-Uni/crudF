@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1 class="mt-5">Add New Product</h1>
-        <form action="/addProduct" method="POST" class="mt-4">
+        <form action="/product/addProduct" method="POST" class="mt-4">
             <div class="form-group">
                 <label for="name">Product Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -22,7 +22,7 @@
                 <label for="category">Category</label>
                 <select class="form-control" id="category" name="id_spct" required>
                     <% rows.forEach(function(category) { %>
-                        <option value="<%= category.id %>"><%= category.name_c %></option>
+                        <option value="<%= category.idc %>"><%= category.name_c %></option>
                     <% }); %>
                 </select>
             </div>

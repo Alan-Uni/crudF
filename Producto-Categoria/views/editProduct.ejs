@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, 1.0">
     <title>Edit Product</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
         <h1 class="mt-5">Edit Product</h1>
-        <form action="/editProduct/<%= idp %>" method="POST" class="mt-4">
+        <form action="/product/editProduct/<%= idp %>" method="POST" class="mt-4">
             <div class="form-group">
                 <label for="name">Product Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="<%= product.name_p %>" required>
+                <input type="text" class="form-control" id="name" name="name" value="<%= rows.name_p %>" required>
             </div>
             <div class="form-group">
                 <label for="price">Product Price</label>
-                <input type="number" class="form-control" id="price" name="price" value="<%= product.price %>" required>
+                <input type="number" class="form-control" id="price" name="price" value="<%= rows.price %>" required>
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
                 <select class="form-control" id="category" name="id_spct" required>
                     <% rows.forEach(function(category) { %>
-                        <option value="<%= category.id %>" <%= product.category === category.id ? 'selected' : '' %>><%= category.name_c %></option>
+                        <option value="<%= category.idc %>" <%= rows.category == category.idc ? 'selected' : '' %>><%= category.name_c %></option>
                     <% }); %>
                 </select>
             </div>
@@ -31,3 +31,4 @@
     </div>
 </body>
 </html>
+

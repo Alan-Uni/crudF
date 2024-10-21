@@ -9,7 +9,7 @@ const port = 3000
 
 // database connection 
 
-const db = require('./dbconnecion');
+const db = require('./dbconnection');
 const categoryRoutes = require('./routes/category');
 const productRoutes = require('./routes/product')
 

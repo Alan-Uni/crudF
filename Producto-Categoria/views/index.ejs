@@ -3,36 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-com Relation</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #14bbdc;
+        }
+        .container {
+            background: #9bd2f8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        h2 {
+            color: #136f81;
+        }
+        .btn-primary {
+            background-color: #4CAF50; /* Verde */
+            border-color: #4CAF50;
+        }
+        .btn-warning {
+            background-color: #FF9800; /* Naranja */
+            border-color: #FF9800;
+        }
+        .btn-danger {
+            background-color: #f44336; /* Rojo */
+            border-color: #f44336;
+        }
+        .btn-primary:hover, .btn-warning:hover, .btn-danger:hover {
+            opacity: 0.8;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Welcome to E-com Relation</h1>
-        
+        <h1 class="mt-5">CRUD</h1>
+
         <div class="mt-4">
-            <h2>Products</h2>
-            <a href="/addProduct" class="btn btn-primary mb-3">Add New Product</a>
+            <h2>Productos</h2>
+            <a href="/product/addProduct" class="btn btn-primary mb-3">Añadir Producto</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Actions</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% products.forEach(function(product) { %>
+                    <% rows.forEach(function(row) { %>
                         <tr>
-                            <td><%= product.id %></td>
-                            <td><%= product.name %></td>
-                            <td><%= product.price %></td>
-                            <td><%= product.category %></td>
+                            <td><%= row.idp %></td>
+                            <td><%= row.name_p %></td>
+                            <td><%= row.price %></td>
+                            <td><%= row.name_c %></td>
                             <td>
-                                <a href="/editProduct/<%= product.id %>" class="btn btn-warning">Edit</a>
-                                <a href="/deleteProduct/<%= product.id %>" class="btn btn-danger">Delete</a>
+                                <a href="/product/editProduct/<%= row.idp %>" class="btn btn-warning">Editar</a>
+                                <a href="/product/deleteProduct/<%= row.idp %>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                     <% }); %>
@@ -41,24 +76,24 @@
         </div>
 
         <div class="mt-4">
-            <h2>Categories</h2>
-            <a href="/addCategory" class="btn btn-primary mb-3">Add New Category</a>
+            <h2>Categorias</h2>
+            <a href="/category/addCategory" class="btn btn-primary mb-3">Añadir Categoria</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Actions</th>
+                        <th>Nombre Categoria</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% categories.forEach(function(category) { %>
+                    <% rows.forEach(function(row) { %>
                         <tr>
-                            <td><%= category.idc %></td>
-                            <td><%= category.name_c %></td>
+                            <td><%= row.idc %></td>
+                            <td><%= row.name_c %></td>
                             <td>
-                                <a href="/editCategory/<%= category.idc %>" class="btn btn-warning">Edit</a>
-                                <a href="/deleteCategory/<%= category.idc %>" class="btn btn-danger">Delete</a>
+                                <a href="/category/editCategory/<%= row.idc %>" class="btn btn-warning">Editar</a>
+                                <a href="/category/deleteCategory/<%= row.idc %>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                     <% }); %>
@@ -68,3 +103,4 @@
     </div>
 </body>
 </html>
+

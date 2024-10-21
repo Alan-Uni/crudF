@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Category</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Delete Category</h1>
+        <p>Are you sure you want to delete this category?</p>
+        <form action="/category/deleteCategory/<%= idc %>" method="POST" class="mt-4">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="/category" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

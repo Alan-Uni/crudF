@@ -1,6 +1,6 @@
 const express = require('express');
 const Router = express.Router();
-const db = require("../dbconnecion");
+const db = require("../dbconnection");
 
 
 // ================================= show all category ================================

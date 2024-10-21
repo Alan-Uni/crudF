@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Add Category</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5"><%= title %></h1>
-        <form action="/addCategory" method="POST" class="mt-4">
+        <h1 class="mt-5">Add New Category</h1>
+        <form action="/category/addCategory" method="POST" class="mt-4">
             <div class="form-group">
                 <label for="name_c">Category Name</label>
                 <input type="text" class="form-control" id="name_c" name="name_c" required>
@@ -19,3 +19,4 @@
     </div>
 </body>
 </html>
+

@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1 class="mt-5">Edit Category</h1>
-        <form action="/editCategory/<%= idc %>" method="POST" class="mt-4">
+        <form action="/category/editCategory/<%= idc %>" method="POST" class="mt-4">
             <div class="form-group">
                 <label for="name_c">Category Name</label>
                 <input type="text" class="form-control" id="name_c" name="name_c" value="<%= row.name_c %>" required>
